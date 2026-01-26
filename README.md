@@ -23,6 +23,13 @@ Each case study follows a consistent decision-driven structure:
 
 ## Case Studies
 
+### System reliability
+- [Websocket Server Zero Downtime Deployment](./cases/websocket_server_zero_downtime_deployment_system_design.md)
+  - Stateful server deployment
+  - Dual Websocket connection
+  - Graceful shutdown in K8S environment 
+  - Blue/Green deployment
+
 ### Payments & Monetization
 - [In-App Purchase Verification System](./cases/iap-verification/README.md)
   - Stateless verification service
@@ -31,7 +38,8 @@ Each case study follows a consistent decision-driven structure:
   - Asynchronous entitlement delivery via SQS
 
 ### (Planned)
-- Zero-downtime deployment for stateful WebSocket services
 - Global traffic routing and latency trade-offs
 - Metrics aggregation and observability platform design
 - Incident-driven architecture evolution
+- BFF Pattern
+- Lazy loading UI modules
