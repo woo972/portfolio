@@ -14,15 +14,15 @@
 
 목표는 유저 경험에 악영향을 주지 않으면서 언제나 배포 가능한 시스템을 만드는 것이다.
 ## Design Options Considered
-**Option 1: Client Dual-Connection Strategy**
+### Option 1: Client Dual-Connection Strategy
 각 클라이언트가 기존 서버와 신규 서버에 대한 커넥션을 관리한다.
 - Pros: 개념이 간단하고 서버 구현이 쉬움.
 - Cons: 단순히 연결만 하면 되는게 아니고 기존 매칭 상대방을 찾아야하기 때문에 채택 불가능.
-**Option 2: Stateless Reconnect with Session Recreation**
+### Option 2: Stateless Reconnect with Session Recreation
 연결 끊김을 허용하고 배포 후 세션을 재연결한다.
 - Pros: 아키텍쳐 변경 최소화.
 - Cons: 유저 끊김 발생으로 채택 불가능.
-**Option 3 (선택): Recovery Token–Based Session Handover**
+### Option 3 (선택): Recovery Token–Based Session Handover
 Old 서버에서 New 서버로 명시적인 session handover 메커니즘을 적용한다.
 - Pros: 가장 확실한 해결책.
 - Cons: 구현 복잡하고 재접속 로직으로 컴포넌트 간 강결합(시그널링 서버, 클라이언트, 인프라).
