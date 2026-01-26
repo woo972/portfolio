@@ -12,26 +12,26 @@ Almigo(알미고)는 0 -> 1의 대화형 AI 디지털휴먼 앱으로 실시간 
 즉, 결제 검증 프로세스의 신뢰성을 강화하는 한 편 Websocket lifecylce과의 decoupling을 중심으로 결제 검증 결과를 전달해야한다.
 ## Design Options Considered & Decision
 ### 검증 서버 분리
-**Option A: IAP 검증을 메인 웹소켓 백엔드에서 처리**
+#### Option A: IAP 검증을 메인 웹소켓 백엔드에서 처리
 - Pros: 아키텍처 간단, 유지보수 용이
 - Cons: Stateful 서버 재시작 시 External Provider로부터 수신하는 검증 결과가 유실될 가능성
-**Option B (선택): IAP 검증 서비스를 별도 서버로 분리**
+#### Option B (선택): IAP 검증 서비스를 별도 서버로 분리
 - Pros: Stateful한 Websocket lifecycle로부터 결제 검증 절차를 분리
 - Cons: 운영 복잡도 증가
 ### 메인 백엔드 서버로 검증 결과 전달 방법
-**Option A: 동기 방식**
+#### Option A: 동기 방식
 메인 백엔드가 polling하고 검증 결과를 기다린다.
 - Cons: External Provider 응답에 의해 blocking. 검증 결과 delivery를 보장할 수 없음.
-**Option B (선택): 비동기 방식 (메시징)**
+#### Option B (선택): 비동기 방식 (메시징)
 검증 백엔드가 결과를 독립적으로 발행하고 메인 백엔드가 가용할 때 결과를 소비한다.
 - Pros: 메인 백엔드 재시작으로 인한 검증 결과 유실 방지
 - Cons: Eventual Consistency 방식
 ### DB 저장과 메시지 전달 간의 원자성 보장
 검증 결과를 Audit을 위해 DB에 저장되어야 하며, 메시지브로커 등을 통해 메인 백엔드로 전달되어야 함.
 DB 쓰기와 메시지큐 발행을 원자적으로 보장할 수 없음.
-**Option A: 2PC**
+#### Option A: 2PC
 - Cons: 현대 메시지큐에서 지원 안함. DB와 메시지브로커를 강결합 시킴.
-**Option B (선택): Transactional Outbox**
+#### Option B (선택): Transactional Outbox
 검증 결과를 DB에 저장 > Outbox 레코드를 같은 트랜잭션으로 처리 > relay 프로세스로 메시지 발행 > 메인 백엔드에서 메시지 처리(idempotency 적용 필요)
 - DB 쓰기와 메시지 발행 절차를 분리, Eventual Delivery를 채택하여 재시도 용이
 ## Finalized Architecture
