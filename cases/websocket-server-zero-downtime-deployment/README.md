@@ -44,7 +44,7 @@ Old 서버에서 New 서버로 명시적인 session handover 메커니즘을 적
     - 재 연결은 New pod 그룹으로 한 번만 발생.
 
 ## Finalized Architecture
-![websocket_zero_downtime_deployment_sequence](./websocket_zero_downtime_deployment_sequence.png)
+![websocket_zero_downtime_deployment_sequence](./sequence.png)
 ## **Trade-Offs & Risks**
 - 프로토콜 및 시퀀스 복잡도 증가.
 - 문제 발생 시 크로스 도메인 협업 필요 (Backend, SDK, Worker, DevOps).
