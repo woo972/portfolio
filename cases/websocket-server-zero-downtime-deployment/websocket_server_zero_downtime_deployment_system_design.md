@@ -12,7 +12,7 @@
 3. 유저가 신규 AI Worker와 매칭되면, 전송되된 미디어가 끊기기 때문에 Old Server에서 연결되었던 AI Worker와 New Server에서도 연결되어야 함.
 4. 롤링업데이트 상황에서 배포로 인해 클라이언트 재접속 시도시 Reconnect storm 야기.
 
-목표는 서버의 다운타임을 막는게 아니라 유저 경험에 악영향을 주지 않으면서 언제는 배포 가능하도록 만드는 것이다.
+목표는 유저 경험에 악영향을 주지 않으면서 언제나 배포 가능한 시스템을 만드는 것이다.
 ## Design Options Considered
 **Option 1: Client Dual-Connection Strategy**
 각 클라이언트가 기존 서버와 신규 서버에 대한 커넥션을 관리한다.
