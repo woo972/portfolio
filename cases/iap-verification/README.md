@@ -35,7 +35,7 @@ DB 쓰기와 메시지큐 발행을 원자적으로 보장할 수 없음.
 검증 결과를 DB에 저장 > Outbox 레코드를 같은 트랜잭션으로 처리 > relay 프로세스로 메시지 발행 > 메인 백엔드에서 메시지 처리(idempotency 적용 필요)
 - DB 쓰기와 메시지 발행 절차를 분리, Eventual Delivery를 채택하여 재시도 용이
 ## Finalized Architecture
-![iap_verification_sequence](./iap_verification_sequence.png)
+![iap_verification_sequence](./sequence.png)
 ## Trade-Offs & Risks
 - 추가 서버 개발과 Outbox relay로 인한 운영 복잡도 증가
 - 검증과 권한부여(구매 재화부여 등) 사이의 Eventual Consistency
