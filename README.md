@@ -7,8 +7,8 @@ The goal of this repository is to demonstrate how I approach complex backend and
 ---
 ## Case Studies
 
-- [Websocket Server Zero Downtime Deployment](./cases/websocket-server-zero-downtime-deployment/websocket_server_zero_downtime_deployment_system_design.md)
-- [In-App Purchase Verification System](./cases/iap-verification/iap_verification_system_design.md)
+- [Websocket Server Zero Downtime Deployment](./cases/websocket-server-zero-downtime-deployment/README.md)
+- [In-App Purchase Verification System](./cases/iap-verification/README.md)
 
 ### (Planned)
 - Global traffic routing and latency trade-offs
