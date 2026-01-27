@@ -16,7 +16,7 @@ AI 채팅 서비스의 Signaling Server는 WebSocket 기반으로 동작하며, 
 ### Option 3 (선택): Redis Pub/Sub 기반 Message Broker
 - 이미 세션/상태 저장소로 Redis 사용 중
 - 인스턴스 간 loose coupling 가능
-- Cons: Fire & Forget으로 메시지 리플레이 등 기능 부족
+- Cons: Fire & Forget으로 메시지 유실 가능
 ## Decision
 Redis Pub/Sub을 활용하여 User와 Worker 각각에 세션 단위의 채널을 할당하고, 메시지를 발행/구독 구조를 채택했다. 각 Signaling Server는 Redis를 통해 메시지를 수신한 뒤, 로컬 WebSocket 세션으로 전달한다.
 ## Finalized Architecture
