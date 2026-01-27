@@ -23,6 +23,7 @@ Redis Pub/Sub을 활용하여 User와 Worker 각각에 세션 단위의 채널�
 - MessageMediator 계층을 통해 Redis 메시지를 내부 이벤트로 변환
 - WebSocketMessageHandler는 messageType 기준으로 분기 처리
 - ChatRoomJoinedSessions 정보를 Redis에 저장하여 cross-instance routing 가능
+![architecture](./architecture.png)
 ![sequence](./sequence.png)
 ## Trade-Offs & Risks
 - Redis Pub/Sub은 메시지 영속성을 보장하지 않음
