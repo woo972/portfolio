@@ -32,6 +32,6 @@ Redis Pub/Sub을 활용하여 User와 Worker 각각에 세션 단위의 채널�
 - 멀티 인스턴스 수평 확장 가능
 - User/Worker가 서로 다른 인스턴스에 연결되어도 정상 통신
 - 단일 인스턴스 장애 시에도 서비스 지속 가능
-## What I’d Improve Next
+## What I’d Change Next
 - Redis Streams 혹은 다른 메시지브로커로 전환 검토 (at-least-once 보장)
 - 글로벌 리전 확장을 고려한 Pub/Sub 추상화
