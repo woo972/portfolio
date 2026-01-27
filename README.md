@@ -9,13 +9,13 @@ The goal of this repository is to demonstrate how I approach complex backend and
 
 - [Websocket Server Zero Downtime Deployment](./cases/websocket-server-zero-downtime-deployment/README.md)
 - [In-App Purchase Verification System](./cases/iap-verification/README.md)
+- [Horizontal Scaling of Websocket Server Using Reids PubSub](./cases/redis-pubsub-scaling/README.md)
 
 ### (Planned)
-- Global traffic routing and latency trade-offs
-- Metrics aggregation and observability platform design
-- Incident-driven architecture evolution
-- BFF Pattern
+- Graceful shutdown using K8S
+- BFF pattern
 - Lazy loading UI modules
+- Muliti user chatting tradeoff
 
 --- 
 ## How to Read
