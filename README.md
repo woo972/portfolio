@@ -7,7 +7,7 @@ The goal of this repository is to demonstrate how I approach complex backend and
 ---
 ## Case Studies
 
-- [Websocket Server Zero Downtime Deployment](./cases/websocket-server-zero-downtime-deployment/README.md)
+- [Websocket Server Zero Downtime Deployment](./cases/websocket-server-zero-downtime-deployment/README.md) / [웹소켓 서버 무중단 배포](./cases/websocket-server-zero-downtime-deployment/README_KR.md)
 - [In-App Purchase Verification System](./cases/iap-verification/README.md)
 - [Horizontal Scaling of Websocket Server Using Reids PubSub](./cases/redis-pubsub-scaling/README.md)
 
