@@ -12,13 +12,13 @@ Our legacy deployment process was "destructive" for stateful connections:
 - Traffic Management: Risk of "Reconnect Storms" crashing the new pods during rolling updates.
 
 ## Design Options & Eevaluation
-**Option 1 : Client dual-connection**
+#### Option 1 : Client dual-connection
 - Pros: Easy server implementation.
 - Cons: Managing "match discovery" across two connections is too complex for the client.
-**Option 2: Stateless reconnect with session recreation by client**
+#### Option 2: Stateless reconnect with session recreation by client
 - Pros: Minimal architectural change.
 - Cons: User experience is still interrupted during the gap.
-**Option 3 (Selected): Recovery Token–Based Session Handover**
+#### Option 3 (Selected): Recovery Token–Based Session Handover
 - Pros: Guaranteed continuity.
 - Cons: High implementation complexity across SDK, Server, and Infra.
 
