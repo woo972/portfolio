@@ -31,8 +31,9 @@ We needed to ensure that saving an audit log to the DB and publishing a message 
 2. An "Outbox" record is created within the same database transaction.
 3. A Relay process polls the Outbox and publishes the message.
 4. The Main Backend processes the message (Idempotency applied).
-
-## Sequence Flow
+### System Design
+![system_design](./system_design.png)
+### Sequence Flow
 ![sequence](./sequence.png)
 
 ## Trade-Offs & Risks
