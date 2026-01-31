@@ -1,8 +1,8 @@
-## Context & Constraints
+## Overview
 Almigo(알미고)는 0 -> 1의 대화형 AI 디지털휴먼 앱으로 실시간 채팅 경험을 제공한다.
 메인 백엔드 서버는 Stateful한 Websocket 기반인 반면, IAP 검증 기능은 Stateless한 HTTP 기반으로 External provider(Google/Apple)가 제공한다.
 
-### 핵심 제한사항
+### Key Constraints
 1. 코어 서비스는 long-lived Websocket session을 유지한다.
 2. IAP 검증은 모바일 앱에 의해 트리거 되며 HTTP를 사용한다.
 3. Google의 검증은 동기 방식인 반면, Apple 검증은 Webhook 기반의 비동기 방식이다.
@@ -10,7 +10,7 @@ Almigo(알미고)는 0 -> 1의 대화형 AI 디지털휴먼 앱으로 실시간 
 5. 사후 감사를 위해 결제 이력이 저장되어야 한다.
 
 즉, 결제 검증 프로세스의 신뢰성을 강화하는 한 편 Websocket lifecylce과의 decoupling을 중심으로 결제 검증 결과를 전달해야한다.
-## Design Options Considered & Decision
+## Design Options & Evaluation
 ### 검증 서버 분리
 #### Option A: IAP 검증을 메인 웹소켓 백엔드에서 처리
 - Pros: 아키텍처 간단, 유지보수 용이
@@ -34,15 +34,15 @@ DB 쓰기와 메시지큐 발행을 원자적으로 보장할 수 없음.
 #### Option B (선택): Transactional Outbox
 검증 결과를 DB에 저장 > Outbox 레코드를 같은 트랜잭션으로 처리 > relay 프로세스로 메시지 발행 > 메인 백엔드에서 메시지 처리(idempotency 적용 필요)
 - DB 쓰기와 메시지 발행 절차를 분리, Eventual Delivery를 채택하여 재시도 용이
-## Finalized Architecture
+## Sequence Flow
 ![iap_verification_sequence](./sequence.png)
 ## Trade-Offs & Risks
 - 추가 서버 개발과 Outbox relay로 인한 운영 복잡도 증가
 - 검증과 권한부여(구매 재화부여 등) 사이의 Eventual Consistency
 - 동기방식 프로세스에 비해 실패에 대한 가시성 악화
-## Outcome
+## The Outcome
 - 메인 백엔드 서버 재시작과 관계없이 검증 결과 유실 방지
 - 메인 백엔드 서버와 결제 서버를 독립적으로 스케일링 가능
-## What I'd Change Next Time
-- 가시성 향상을 위해 메시지 브로커에 대한 대쉬보드 설정 선행
+## Retrospective
+- 가시성 향상을 위해 메시지 브로커에 대한 대쉬보드 설정
 - E2E 테스트가 가능한 스크립트 제작
