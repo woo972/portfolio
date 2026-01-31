@@ -11,7 +11,7 @@ Our legacy deployment process was "destructive" for stateful connections:
 - Worker Stickiness: To prevent media breaks, clients must reconnect to the exact same AI Worker they were previously paired with.
 - Traffic Management: Risk of "Reconnect Storms" crashing the new pods during rolling updates.
 
-## Design Options & Eevaluation
+## Design Options & Evaluation
 #### Option 1 : Client dual-connection
 - Pros: Easy server implementation.
 - Cons: Managing "match discovery" across two connections is too complex for the client.
