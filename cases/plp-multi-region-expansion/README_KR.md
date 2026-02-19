@@ -120,7 +120,7 @@ promotion.banner.text=今日特價
     - Impact: 한 리전 변경이 다른 리전 영향 가능
     - Mitigation: 철저한 Feature Flag + Canary 배포
 ## The Outcome
-- 잠재적 리전 확장 속도: 3개월 → 3일
+- 잠재적 리전 확장 속도 감소
 - 코드 중복률: 0%
 - 공통 기능이 모든 리전에 동시 적용
 ## Retrospective
