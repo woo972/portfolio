@@ -11,7 +11,7 @@ The goal of this repository is to demonstrate how I approach complex backend and
 |Websocket Server Zero Downtime Deployment|[LINK](./cases/websocket-server-zero-downtime-deployment/README.md)|[LINK](./cases/websocket-server-zero-downtime-deployment/README_KR.md)|
 |In-App Purchase Verification System|[LINK](./cases/iap-verification/README.md)|[LINK](./cases/iap-verification/README_KR.md)|
 |Horizontal Scaling of Websocket Server Using Reids PubSub|-|[LINK](./cases/redis-pubsub-scaling/README.md)| 
-|PLP Multi Region Expasion|-|[LINK](./cases/plp-multi-region-expansion/README_KR.md)| 
+|PLP Multi Region Expansion|-|[LINK](./cases/plp-multi-region-expansion/README_KR.md)| 
 
 ### (Planned)
 - Graceful shutdown using K8S
