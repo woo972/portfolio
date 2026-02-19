@@ -51,7 +51,7 @@ public class RegionConfig {
 ```
 #### 2. Strategy Pattern with Conditional Beans
 리전별 비즈니스 로직 분기를 if-else 난무가 아닌, 명확한 전략 패턴으로 변경한다.
-이를 통해, 새로운 리전 추가시 기존 코드를 수정할 필요 없고, 각 리전별 로직을 독립적으로 테스트할 수도 있다.
+이를 통해, 새로운 리전 추가시 기존 코드를 수정할 필요 없고, 각 리전별 로직을 독립적으로 테스트할 수도 있다.
 ```
 // 인터페이스 정의
 public interface PromotionBannerService {
