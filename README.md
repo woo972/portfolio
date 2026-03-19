@@ -1,29 +1,62 @@
-# Engineering-Portfolio
-This repository contains real-world system design case studies based on production experience.
-Each document focuses on **technical decision-making**, **trade-offs**, and **failure-aware architecture design** rather than implementation details.
+# Engineering Portfolio
 
-The goal of this repository is to demonstrate how I approach complex backend and distributed system problems as a Staff-level Individual Contributor.
+This repository documents real-world engineering experience across three dimensions:
+**technical decision-making**, **production failure analysis**, and **engineering leadership**.
+
+Each document is written to reflect how I think about problems — not just what was built,
+but why specific approaches were chosen, what trade-offs were accepted, and what I learned.
 
 ---
+
 ## Case Studies
-|Title|Eng|Kor|
-|---|---|---|
-|Websocket Server Zero Downtime Deployment|[LINK](./cases/websocket-server-zero-downtime-deployment/README.md)|[LINK](./cases/websocket-server-zero-downtime-deployment/README_KR.md)|
-|In-App Purchase Verification System|[LINK](./cases/iap-verification/README.md)|[LINK](./cases/iap-verification/README_KR.md)|
-|Horizontal Scaling of Websocket Server Using Reids PubSub|-|[LINK](./cases/redis-pubsub-scaling/README.md)| 
-|PLP Multi Region Expansion|-|[LINK](./cases/plp-multi-region-expansion/README_KR.md)| 
+> Architecture decisions and system design trade-offs from production systems.
+> Each case follows a decision-driven structure: problem → options evaluated → decision → outcome.
 
-### (Planned)
-- Graceful shutdown using K8S
-- BFF pattern
+| Title | Link |
+|-------|------|
+| WebSocket Server Zero Downtime Deployment | [README](./cases/websocket-server-zero-downtime-deployment/README.md) |
+| In-App Purchase Verification System | [README](./cases/iap-verification/README.md) |
+| Horizontal Scaling of WebSocket Server Using Redis Pub/Sub | [README](./cases/redis-pubsub-scaling/README.md) |
+| PLP Multi-Region Expansion | [README](./cases/plp-multi-region-expansion/README.md) |
+
+**Planned**
+- Graceful shutdown using Kubernetes
+- BFF pattern for cross-platform delivery
 - Lazy loading UI modules
-- Muliti user chatting tradeoff
+- Multi-user chat architecture trade-offs
 
---- 
+---
+
+## Incident Reports
+> Post-mortems from production failures.
+> Each report documents how the failure was detected, diagnosed across layers, and permanently resolved.
+
+| Title | Link |
+|-------|------|
+| JVM Memory Leak via Unclosed Kotlin Channel in WebSocket Service | [README](./incidents/jvm-memory-leak-websocket/README.md) |
+
+**Planned**
+- Circuit breaker activation during iPhone 15 pre-order traffic spike
+
+---
+
+## Leadership
+> Engineering leadership experience: team building, process design, and culture.
+> Focused on decisions made at the team level and their measurable outcomes.
+
+| Title | Link |
+|-------|------|
+|  | |
+
+**Planned**
+- Building and Leading a 5-Person Cross-Cultural Engineering Team
+- Introducing AI-assisted code review into CI pipeline
+
+---
+
 ## How to Read
 
-Each case study follows a consistent decision-driven structure:
-
+### Case Studies
 1. Overview
 2. The Problem
 3. Design Options & Evaluation
@@ -31,3 +64,18 @@ Each case study follows a consistent decision-driven structure:
 5. Trade-offs & Risks
 6. The Outcome
 7. Retrospective
+
+### Incident Reports
+1. Summary
+2. Timeline
+3. Root Cause Analysis
+4. Resolution
+5. Prevention
+6. Retrospective
+
+### Leadership
+1. Context
+2. The Challenge
+3. Approach
+4. What Changed
+5. Retrospective
